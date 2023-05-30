@@ -1,11 +1,12 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import space from "../assets/spacex--p-KCm6xB9I-unsplash.jpg";
+
 export default function Navbar() {
   return (
-    <div className="relative">
-      <img className=" object-cover h-screen sm:min-w-max w-screen" src="https://wallpapercave.com/wp/wp2293445.jpg" alt="" />
-      <div className="bg-transparent flex justify-between items-center absolute top-0 z-10 w-screen">
+    <div className="bg-black border-b border-b-gray-500  ">
+      <div className="flex justify-between items-center bg-black">
+
+
         {/* LOGO */}
         <svg
           version="1.1"
@@ -13,7 +14,7 @@ export default function Navbar() {
           y="0px"
           viewBox="0 0 400 50"
           alt="SpaceX Logo"
-          className="h-14 w-44  m-5 z-10"
+          className="h-14 w-44  m-5 z-10 cursor-pointer"
         >
           <title>SpaceX Logo</title>
           <g className="letter_s">
@@ -78,58 +79,54 @@ export default function Navbar() {
 
         <div className="flex">
           <ul className="hidden md:visible nav-links md:flex space-x-4">
-            <li className="nav-item text-white ">
+            <li className="nav-item text-white cursor-pointer hover:text-yellow-400">
               <a
-                href="/vehicles/falcon-9/"
+                href="https://www.spacex.com/vehicles/falcon-9/"
                 aria-label="Learn about the Falcon 9 vehicle"
               >
                 Falcon 9
               </a>
             </li>
-            <li className="nav-item text-white ">
+            <li className="nav-item text-white cursor-pointer hover:text-yellow-400">
               <a
-                href="/vehicles/falcon-heavy/"
+                href="https://www.spacex.com/vehicles/falcon-heavy/"
                 aria-label="Learn about the Falcon Heavy vehicle"
               >
                 Falcon Heavy
               </a>
             </li>
-            <li className="nav-item text-white ">
+            <li className="nav-item text-white cursor-pointer hover:text-yellow-400 ">
               <a
-                href="/vehicles/dragon/"
+                href="https://www.spacex.com/vehicles/dragon/"
                 aria-label="Learn about the Dragon vehicle"
               >
                 Dragon
               </a>
             </li>
-            <li className="nav-item text-white ">
+            <li className="nav-item text-white cursor-pointer hover:text-yellow-400">
               <a
-                href="/vehicles/starship/"
+                href="https://www.spacex.com/vehicles/starship/"
                 aria-label="Learn about the Starship vehicle"
               >
                 Starship
               </a>
             </li>
-            <li className="nav-item text-white ">
+            <li className="nav-item text-white cursor-pointer hover:text-yellow-400">
               <a
-                href="/human-spaceflight/"
+                href="https://www.spacex.com/human-spaceflight/"
                 aria-label="Learn about Human Spaceflight"
               >
-                Human Spaceflight
+                HumanSpaceflight
               </a>
             </li>
           </ul>
 
-          <MenuIcon className="text-white h-44 mx-5 cursor-pointer" />
+          <MenuIcon className="text-white h-44 mx-5 cursor-pointer hover:text-yellow-400" />
         </div>
       </div>
 
+      
 
-      <div className="absolute top-32 lg:py-44 text-center p-14 text-4xl font-bold text-white font-serif">
-        <h1>Explore the Frontier of Innovation:
-Designs, Manufactures, and Launches
-Advanced Rockets and Spacecraft</h1>
-      </div>
     </div>
   );
 }
