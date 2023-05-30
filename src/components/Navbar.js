@@ -4,7 +4,7 @@ import space from "../assets/spacex--p-KCm6xB9I-unsplash.jpg";
 export default function Navbar() {
   return (
     <div className="relative">
-      <img className=" object-cover h-screen sm:min-w-max w-screen" src={space} alt="" />
+      <img className=" object-cover h-screen sm:min-w-max w-screen" src="https://wallpapercave.com/wp/wp2293445.jpg" alt="" />
       <div className="bg-transparent flex justify-between items-center absolute top-0 z-10 w-screen">
         {/* LOGO */}
         <svg
@@ -125,7 +125,7 @@ export default function Navbar() {
       </div>
 
 
-      <div className="absolute top-32 text-center p-14 text-4xl font-bold text-white font-serif">
+      <div className="absolute top-32 lg:py-44 text-center p-14 text-4xl font-bold text-white font-serif">
         <h1>Explore the Frontier of Innovation:
 Designs, Manufactures, and Launches
 Advanced Rockets and Spacecraft</h1>
