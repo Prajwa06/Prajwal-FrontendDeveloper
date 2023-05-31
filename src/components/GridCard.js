@@ -8,8 +8,11 @@ export default function GridCard(props) {
               launchDate,
               type,
               landings,
-              serial
+              serial,
+              toSinglePage,
+              capsule,
   }=props
+
 
   
   return (
@@ -25,7 +28,7 @@ export default function GridCard(props) {
       </div>
       
       <p className="text-xs my-2 line-clamp-2"><span className='font-bold'>Details: </span>{details}</p>
-      <button className="p-2 text-xs md:text-sm bg-gradient-to-b from-yellow-200 to-yellow-400 border-yellow-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500;
+      <button onClick={(e)=>toSinglePage(e,capsule)} className="p-2 text-xs md:text-sm bg-gradient-to-b from-yellow-200 to-yellow-400 border-yellow-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500;
   ">Learn More</button>
      
     </div>

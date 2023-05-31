@@ -1,7 +1,9 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  const navigate=useNavigate()
   return (
     <div className="bg-black border-b border-b-gray-500  ">
       <div className="flex justify-between items-center bg-black">
@@ -14,7 +16,8 @@ export default function Navbar() {
           y="0px"
           viewBox="0 0 400 50"
           alt="SpaceX Logo"
-          className="h-14 w-44  m-5 z-10 cursor-pointer"
+          className="h-14 w-44  m-5 z-10 cursor-pointer" 
+          onClick={()=>navigate('/')}
         >
           <title>SpaceX Logo</title>
           <g className="letter_s">
