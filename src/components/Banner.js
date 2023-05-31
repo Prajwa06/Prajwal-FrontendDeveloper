@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom'
 export default function Banner() {
     const navigate=useNavigate();
 
+    // navigate to grid page
     const toGrid = (e)=>{
         e.preventDefault();
         navigate('grid');
     }
+
   return (
     <div className='relative'>
     <img className=' w-screen object-cover h-screen' src="https://cdn.pixabay.com/photo/2016/10/20/18/35/earth-1756274_1280.jpg" alt="" />

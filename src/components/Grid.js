@@ -16,6 +16,9 @@ export default function Grid() {
   const [status, setStatus] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+
+  // take back to previous page
   const handlePrev = (e) => {
     e.preventDefault();
     if (page === 1) {
@@ -25,6 +28,8 @@ export default function Grid() {
     setPage(page - 1);
   };
 
+
+  // take to next page
   const handleNext = (e) => {
     e.preventDefault();
     if (data.length < page * 10) {
@@ -34,6 +39,8 @@ export default function Grid() {
     setPage(page + 1);
   };
 
+
+  // every time component loads it fetch data from api and store it in state
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -52,12 +59,16 @@ export default function Grid() {
   }, []);
   console.log(data);
 
+
+
+  // handle search and filter functionality
   const handleSearch = (e) => {
     e.preventDefault();
 
    
     // eslint-disable-next-line
     const newData = data.filter((val) => {
+      // if user give both filters
       if (type.length > 0 && status.length > 0) {
         if (
           val.capsule_serial.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -66,21 +77,27 @@ export default function Grid() {
         ) {
           return val;
         }
-      } else if (type.length > 0 && status.length === 0) {
+      } 
+      //if user give type filter
+      else if (type.length > 0 && status.length === 0) {
         if (
           val.capsule_serial.toLowerCase().includes(searchTerm.toLowerCase()) &&
           val.type.toLowerCase().includes(type.toLowerCase())
         ) {
           return val;
         }
-      } else if (type.length === 0 && status.length > 0) {
+      } 
+      // if user give only status filter
+      else if (type.length === 0 && status.length > 0) {
         if (
           val.capsule_serial.toLowerCase().includes(searchTerm.toLowerCase()) &&
           val.status.toLowerCase().includes(status.toLowerCase())
         ) {
           return val;
         }
-      } else if (type.length === 0 && status.length === 0) {
+      } 
+      // if user give only search input without filter
+      else if (type.length === 0 && status.length === 0) {
         if (
           val.capsule_serial.toLowerCase().includes(searchTerm.toLowerCase())
         ) {
@@ -89,10 +106,15 @@ export default function Grid() {
       }
     });
 
+
+    // updates data according to search and filter
     setData(newData);
     setSearchTerm("");
   };
 
+
+
+  // handles change when you  user enter in searchbar and save it in state 
   const handleChange = (e) => {
     e.preventDefault();
     setSearchTerm(e.target.value);
@@ -102,19 +124,22 @@ export default function Grid() {
     }
   };
 
+
+  // handle pop up to show single page info of grid
   const toSinglePage = (e, capsule) => {
     e.preventDefault();
     dispatch(addcapsule(capsule));
     navigate("/" + capsule.capsule_serial);
   };
 
-
+// set type to empty and reset data to original
   const typeRefresh =(e)=>{
       e.preventDefault();
       setData(originalData);
       setType("");
   }
-
+  
+// set status to empty and reset data to original
   const statusRefresh =(e)=>{
     e.preventDefault();
     setData(originalData);
