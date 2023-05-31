@@ -182,8 +182,8 @@ export default function Grid() {
 
 
       {/* type filter----------------------------------------------------------------------------------------------------- */}
-      <div className="grid lg:grid-cols-2 gap-5 justify-center lg:mx-60">
-        <div className="flex space-x-2  items-center bg-white p-4 rounded-lg">
+      <div className="grid lg:grid-cols-2 gap-5 lg:mx-96  ">
+        <div className="flex space-x-2  items-center bg-white p-4 rounded-lg justify-between">
           <input
             type="text"
             className="border-none outline-none"
@@ -191,6 +191,7 @@ export default function Grid() {
             value={type}
             onChange={(e) => setType(e.target.value)}
           />
+          <div className="flex justify-center">
           <AddIcon
             onClick={handleSearch}
             className="text-gray-400 cursor-pointer hover:text-yellow-400"
@@ -200,11 +201,12 @@ export default function Grid() {
             onClick={typeRefresh}
             className="text-gray-400 cursor-pointer hover:text-yellow-400"
           />
+          </div>
         </div>
 
 
 {/* status filter----------------------------------------------------------------------------------------------------- */}
-        <div className="flex space-x-2  items-center bg-white p-4 rounded-lg">
+        <div className="flex space-x-2  items-center justify-between bg-white p-4 rounded-lg">
           <input
             type="text"
             className="border-none outline-none"
@@ -212,6 +214,9 @@ export default function Grid() {
             value={status}
             onChange={(e) => setStatus(e.target.value)}
           />
+          <div className="flex justify-center">
+
+          
           <AddIcon
             onClick={handleSearch}
             className="text-gray-400 cursor-pointer hover:text-yellow-400"
@@ -221,6 +226,7 @@ export default function Grid() {
             onClick={statusRefresh}
             className="text-gray-400 cursor-pointer hover:text-yellow-400"
           />
+          </div>
         </div>
       </div>
 
